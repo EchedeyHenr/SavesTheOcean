@@ -1,0 +1,64 @@
+@use '../../../../Global' as *;
+
+.static-report {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  .static-report-titles {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 5px;
+    padding: 10px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $color-primary;
+      margin-top: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+
+  .report-title {
+    font-size: $report-title;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0 0 10px;
+  }
+
+  .report-sub-title {
+    font-size: $report-sub-title;
+    margin: 0 0 5px;
+    color: $text-secondary-color;
+  }
+
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    @media (max-width: $mobile) {
+      height: 200px;
+    }
+  }
+  
+  .staticReportImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .paragraph{
+    margin: 5px 0;
+  }
+}

@@ -1,0 +1,126 @@
+@use '../../../Global' as *;
+
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 1.5rem;
+  background-color: $color-primary;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e0e0e0;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.header-buttons {
+  display: flex;
+  gap: 1rem; // Esta propiedad añade separación entre los botones
+}
+
+.header-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 0.9rem;
+
+  &.dashboard-btn {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #333;
+  }
+  
+  &.logout-btn {
+    background-color: #dc3545;
+    color: #ffffff;
+  }
+  
+  &.dashboard-btn:hover,
+  &.logout-btn:hover {
+    opacity: 0.8;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: $form-button-tablet;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: $form-button-mobile;
+  }
+}
+
+/* Título del header */
+.header-title {
+  font-size: $form-title-desktop;
+  color: $color-secondary;
+  font-weight: 700;
+  
+  @media (max-width: $tablet) {
+    font-size: $form-title-tablet;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: $form-title-mobile;
+  }
+}
+
+/* Navegación dentro del header */
+.header-nav {
+  display: flex;
+  gap: 2rem;
+  
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @media (max-width: $mobile) {
+    gap: 0.5rem;
+  }
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: $color-secondary;
+  font-size: $form-input-desktop;
+  
+  &:hover {
+    color: $color-third;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: $form-input-tablet;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: $form-input-mobile;
+  }
+}
+
+/* Estilos adicionales para un menú de hamburguesa (si lo necesitas) */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  
+  @media (max-width: $tablet) {
+    display: block;
+  }
+}
+
+/* Si usas un contenedor para el menú lateral o emergente */
+.sidebar {
+  display: none;
+  @media (max-width: $tablet) {
+    display: block;
+  }
+}
+

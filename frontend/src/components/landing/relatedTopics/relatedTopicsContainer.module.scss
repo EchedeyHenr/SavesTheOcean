@@ -1,0 +1,51 @@
+@use '../../../Global' as *;
+
+.relatedTopicsContainer {
+  padding: 0 1rem;
+  margin-bottom: 4rem;
+  position: relative;
+  
+  @media (min-width: $tablet) {
+    padding: 0 2rem;
+    //margin-bottom: 6rem;
+  }
+}
+
+.relatedTopicsTitle {
+  font-size: 1.5rem;
+  color: $color-secondary;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  //text-align: center;
+  
+  @media (min-width: $tablet) {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+.relatedTopicsCarousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 0 2rem 1rem;
+  gap: 1.5rem;
+  
+  &::-webkit-scrollbar {
+    height: 8px;
+    background-color: #f5f5f5;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: darken(#f5f5f5, 15%);
+    border-radius: 4px;
+  }
+  
+  @media (min-width: $tablet) {
+    gap: 2rem;
+    padding-left: 2rem;
+  }
+}

@@ -1,0 +1,20 @@
+@use '../../../Global' as *;
+
+.staticReportContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; // separación entre informes
+  justify-content: space-around;
+  padding: 2rem;
+  background-color: $color-primary; // se mantiene el fondo blanco del global
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+}
