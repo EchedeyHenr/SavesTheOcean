@@ -14,6 +14,7 @@ const CompanyDetail: React.FC = () => {
   const [company, setCompany] = useState<Company | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [emissionsUpdated, setEmissionsUpdated] = useState(false);
 
   useEffect(() => {
     const fetchCompany = async () => {
@@ -33,6 +34,10 @@ const CompanyDetail: React.FC = () => {
 
     fetchCompany();
   }, [id]);
+
+  const handleEmissionsUpdate = () => {
+    setEmissionsUpdated(prev => !prev);
+  };
 
   if (loading) {
     return <div className={styles.loading}>Loading company details...</div>;
@@ -105,7 +110,7 @@ const CompanyDetail: React.FC = () => {
       <div className={styles.detailSection}>
         <h2 className={styles.sectionTitle}>Emissions and Discharge Data</h2>
         <div className={styles.constructionBox}>
-          <EmissionsImport />
+          <EmissionsImport onEmissionsAdded={handleEmissionsUpdate}/>
         </div>
       </div>
 
@@ -114,7 +119,7 @@ const CompanyDetail: React.FC = () => {
       <div className={styles.detailSection}>
         <h2 className={styles.sectionTitle}>Line Chart for Monthly Solvent Emissions</h2>
         <div className={styles.constructionBox}>
-          <EmissionsChart />
+          <EmissionsChart key={Number(emissionsUpdated)}/>
         </div>
       </div>
 

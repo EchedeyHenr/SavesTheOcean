@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import "./_Global.scss";
 import App from "./App";
 import { AuthProvider } from "./context/AuthContext";
+import { EmissionsProvider } from "./context/EmissionsContext";
 
 const root = document.getElementById("root");
 
@@ -21,7 +22,9 @@ createRoot(root).render(
       }}
     >
       <AuthProvider>
-        <App />
+        <EmissionsProvider>
+          <App />
+        </EmissionsProvider>
       </AuthProvider>
     </BrowserRouter>
   </StrictMode>,

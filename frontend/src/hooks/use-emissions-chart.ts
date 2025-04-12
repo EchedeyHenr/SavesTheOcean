@@ -3,7 +3,7 @@ import { Emission, Company, PollutionType } from "@/shared/types/db-models";
 import { COLORS, DEFAULT_COLOR } from "../constants/chart-colors";
 import { getAllEmissions } from "../services/emissions";
 import { getAllCompanies } from "../services/companys";
-
+import { useEmissions } from "../context/EmissionsContext";
 export const useEmissionsChart = () => {
   const [allData, setAllData] = useState<Emission[]>([]);
   const [companies, setCompanies] = useState<Company[]>([]);

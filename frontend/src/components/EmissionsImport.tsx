@@ -2,7 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import { useEmissionsImport } from '../hooks/useEmissionsImport';
 import { Company } from '../../../shared/types/db-models';
 
-export const EmissionsImport = () => {
+interface EmissionsImportProps {
+  onEmissionsAdded: () => void;
+}
+
+export const EmissionsImport: React.FC<EmissionsImportProps> = ({ onEmissionsAdded }) => {
   const {
     companies,
     selectedCompany,
@@ -31,7 +35,10 @@ export const EmissionsImport = () => {
 
   const handleImport = () => {
     if (selectedFile) {
-      handleFileUpload(selectedFile);
+      handleFileUpload(selectedFile).then(() => {
+        // Llamamos a onEmissionsAdded cuando la importación es exitosa
+        onEmissionsAdded();
+      });
     }
   };
 
