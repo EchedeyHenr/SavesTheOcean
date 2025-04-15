@@ -19,5 +19,5 @@ export const ProtectedRoute = () => {
         return <LoadingSpinner />;
     }
 
-    return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
+    return isAuthenticated ? <Outlet /> : <Navigate to="/landing" replace />;
 };

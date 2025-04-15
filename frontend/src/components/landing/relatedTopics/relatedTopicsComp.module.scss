@@ -4,10 +4,12 @@
   padding: 0 1rem;
   margin-bottom: 4rem;
   position: relative;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   
   @media (min-width: $tablet) {
     padding: 0 2rem;
-    //margin-bottom: 6rem;
   }
 }
 
@@ -15,13 +17,11 @@
   font-size: 1.5rem;
   color: $color-secondary;
   margin-bottom: 1.5rem;
-  padding-left: 1rem;
-  //text-align: center;
+  text-align: center;
   
   @media (min-width: $tablet) {
     font-size: 1.75rem;
     margin-bottom: 2rem;
-    padding-left: 2rem;
   }
 }
 
@@ -31,8 +31,9 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  padding: 1rem 0 2rem 1rem;
+  padding: 1rem 0 2rem 0;
   gap: 1.5rem;
+  justify-content: center;
   
   &::-webkit-scrollbar {
     height: 8px;
@@ -46,6 +47,5 @@
   
   @media (min-width: $tablet) {
     gap: 2rem;
-    padding-left: 2rem;
   }
 }

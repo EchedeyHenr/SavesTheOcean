@@ -8,30 +8,30 @@ import { UserReportsContainer } from "./usersReportsContainer/UserReportsContain
 import { useUser } from "../../hooks/useUser";
 import { useAuth } from "../../context/AuthContext";
 import Login from "../login/Login";
+import WaterIcons from "../waterIcons/WaterIcons";
 
 //! Ten al lado el services/ourReports.services.js
 export function LandingPage() {
   const { user } = useUser();
   const { login, logout } = useAuth();
 
-  if (!user) {
-    return (
-      <div className={styles.landingPage}>
-        <div className="landing-container">
+  return (
+    <div className={styles.landingPage}>
+      {!user ? (
+        <>
           <Login />
           <StaticReports />
           <RelatedTopics />
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className={styles.landingPage}>
-      <StaticReports />
-      <UserReportsContainer />
-      <EmissionsChart />
-      <RelatedTopics />
+        </>
+      ) : (
+        <>
+          <WaterIcons />
+          <StaticReports />
+          <UserReportsContainer />
+          <EmissionsChart />
+          <RelatedTopics />
+        </>
+      )}
     </div>
   );
 }
